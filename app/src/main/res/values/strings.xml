@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Szakdolgozat</string>
+    <string name="search">Keresés</string>
+    <string name="game_details">Részletek</string>
+    <string name="game_genre">Kategória: %1$s</string>
+    <string name="game_platform">Platform: %1$s</string>
+    <string name="game_publisher">Kiadó: %1$s</string>
+    <string name="game_release_date">Kiadás dátuma: %1$s</string>
+</resources>
