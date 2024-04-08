@@ -46,8 +46,7 @@ private fun BottomNavigationBar(
     val bottomNavItems = listOf(
         BottomNavItem.Notification,
         BottomNavItem.PhotoPicker,
-        BottomNavItem.Camera,
-        BottomNavItem.Device
+        BottomNavItem.Camera
     )
 
     NavigationBar {

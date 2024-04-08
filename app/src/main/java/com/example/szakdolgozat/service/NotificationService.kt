@@ -13,6 +13,7 @@ class NotificationService(
         const val CHANNEL_ID = "notification_channel"
     }
 
+    // TODO - Szakdolgozatban magyarázni
     fun showNotification() {
         val notificationManager =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

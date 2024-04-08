@@ -6,6 +6,7 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+    <!-- TODO - Szakdolgozatban megemlíteni -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.CAMERA" />
 

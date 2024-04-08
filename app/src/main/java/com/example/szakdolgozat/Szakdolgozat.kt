@@ -16,6 +16,7 @@ class Szakdolgozat : Application() {
         createNotificationChannel()
     }
 
+    // TODO - Szakdolgozatban bemutatni
     private fun createNotificationChannel() {
         val channel = NotificationChannel(
             NotificationService.CHANNEL_ID,

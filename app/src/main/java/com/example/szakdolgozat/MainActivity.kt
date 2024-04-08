@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     NavBarScaffold(onClick = { navController.navigate(it) }
                     ) {
-                        Navigation(navController = navController,)
+                        Navigation(navController = navController)
                     }
                 }
             }

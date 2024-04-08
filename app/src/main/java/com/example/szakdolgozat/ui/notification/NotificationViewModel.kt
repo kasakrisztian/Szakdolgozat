@@ -24,6 +24,7 @@ class NotificationViewModel @Inject constructor(
     private val _hasNotificationPermission = MutableStateFlow(true)
     val hasNotificationPermission = _hasNotificationPermission.asStateFlow()
 
+    // TODO - Szakdolgozatban bemutatni
     init {
         _hasNotificationPermission.value =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

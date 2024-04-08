@@ -2,7 +2,6 @@ package com.example.szakdolgozat.module
 
 import android.content.Context
 import com.example.szakdolgozat.service.CameraService
-import com.example.szakdolgozat.service.DeviceInfoService
 import com.example.szakdolgozat.service.NotificationService
 import dagger.Module
 import dagger.Provides
@@ -25,11 +24,5 @@ object ServiceModule {
     @Singleton
     fun provideCameraService(@ApplicationContext context: Context): CameraService {
         return CameraService(context)
-    }
-
-    @Provides
-    @Singleton
-    fun provideDeviceInfoService(@ApplicationContext context: Context): DeviceInfoService {
-        return DeviceInfoService(context)
     }
 }

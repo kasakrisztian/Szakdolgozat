@@ -18,11 +18,15 @@ class CameraViewModel @Inject constructor(
     @ApplicationContext val applicationContext: Context
 ) : ViewModel() {
 
+    // TODO - nagyjából mindenről írni
     private val _isCameraPermissionGranted = MutableStateFlow(cameraService.hasCameraPermission())
     val isCameraPermissionGranted = _isCameraPermissionGranted.asStateFlow()
 
-    private val _bitmaps = MutableStateFlow<List<Bitmap>>(emptyList())
-    val bitmaps = _bitmaps.asStateFlow()
+    private val _showCamera = MutableStateFlow(false)
+    val showCamera = _showCamera.asStateFlow()
+
+    private val _bitmap = MutableStateFlow<Bitmap?>(null)
+    val bitmap = _bitmap.asStateFlow()
 
     private val _controller = MutableStateFlow(
         LifecycleCameraController(applicationContext).apply {
@@ -31,10 +35,17 @@ class CameraViewModel @Inject constructor(
     val controller = _controller.asStateFlow()
 
     fun onTakePhoto() {
-        cameraService.takePhoto(_controller.value) { _bitmaps.value += it }
+        cameraService.takePhoto(_controller.value) {
+            _bitmap.value = it
+            _showCamera.value = false
+        }
     }
 
     fun onPermissionGranted(isGranted: Boolean) {
         _isCameraPermissionGranted.value = isGranted
+    }
+
+    fun onShowCamera() {
+        _showCamera.value = !_showCamera.value
     }
 }

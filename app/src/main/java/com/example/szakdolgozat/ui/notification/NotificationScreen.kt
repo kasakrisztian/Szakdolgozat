@@ -17,6 +17,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 
@@ -25,6 +26,7 @@ fun NotificationScreen() {
     val viewModel = hiltViewModel<NotificationViewModel>()
     val hasNotificationPermission by viewModel.hasNotificationPermission.collectAsState()
 
+    // TODO - Szakdolgozatban bemutatni
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission(),
         onResult = { isGranted ->
@@ -33,6 +35,7 @@ fun NotificationScreen() {
     )
 
     LaunchedEffect(Unit) {
+        // TODO - Szakdolgozatban megemlíteni
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !hasNotificationPermission) {
             permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
@@ -58,4 +61,10 @@ fun NotificationScreen() {
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun NotificationScreenPreview() {
+    NotificationScreen()
 }

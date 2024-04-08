@@ -21,6 +21,8 @@ class CameraService(
         const val CAMERA_PERMISSION = Manifest.permission.CAMERA
     }
 
+    // TODO - Szakdolgozatban bemutatni a két függvényt (hasCameraPermission, takePhoto)
+
     fun hasCameraPermission(): Boolean {
         return ContextCompat.checkSelfPermission(
             context, CAMERA_PERMISSION
